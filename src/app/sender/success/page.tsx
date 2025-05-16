@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = 'force-dynamic';
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/shared/ui/Button";
 import { useEffect, useState } from "react";
