@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  appDir: true,
   webpack: (config) => {
     // Handle Solana package externals
     config.externals = config.externals || {};
