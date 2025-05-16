@@ -35,6 +35,9 @@ export function PrivyProvider({ children }: PropsWithChildren) {
             connectors: toSolanaWalletConnectors(),
           },
         },
+        embeddedWallets: {
+          createOnLogin: 'users-without-wallets',
+        },
       }}
     >
       {children}
