@@ -3,6 +3,8 @@ import { ReactNode } from "react";
 import { PrivyProvider } from "@/shared/lib/PrivyProvider";
 import { SenderFlowProvider } from "@/features/sender-flow/context";
 import AuthHeader from "@/shared/ui/AuthHeader";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function RootLayout({
   children,
@@ -18,6 +20,8 @@ export default function RootLayout({
             <main className="container mx-auto px-4">
               {children}
             </main>
+            <Analytics />
+            <SpeedInsights />
           </SenderFlowProvider>
         </PrivyProvider>
       </body>
