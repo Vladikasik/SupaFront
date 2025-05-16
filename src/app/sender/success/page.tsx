@@ -1,12 +1,16 @@
 "use client";
+
+// Make this page always render at request-time for dynamic data
 export const dynamic = 'force-dynamic';
+
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/shared/ui/Button";
 import { useEffect, useState } from "react";
 import { fetchGiftById } from "@/entities/gift/api";
 import { Gift } from "@/entities/gift/types";
 
-export default function PaymentSuccessPage() {
+function SuccessContent() {
   const params = useSearchParams();
   const giftId = params.get("giftId");
   const [gift, setGift] = useState<Gift | null>(null);
@@ -157,5 +161,13 @@ export default function PaymentSuccessPage() {
         <p>The recipient will need to log in with their email to claim this gift.</p>
       </div>
     </div>
+  );
+}
+
+export default function PaymentSuccessPage() {
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+      <SuccessContent />
+    </Suspense>
   );
 } 
