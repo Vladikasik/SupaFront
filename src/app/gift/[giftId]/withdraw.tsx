@@ -120,7 +120,7 @@ export function WithdrawPage({ gift }: WithdrawPageProps) {
 
       // Show success for a moment before redirecting
       setTimeout(() => {
-        router.push(`/gift/${gift.gift_id}`);
+      router.push(`/gift/${gift.gift_id}`);
       }, 3000);
     } catch (err: any) {
       console.error("[Withdraw] Error:", err);
@@ -148,65 +148,65 @@ export function WithdrawPage({ gift }: WithdrawPageProps) {
           Withdraw Funds
         </h1>
 
-        <div className="space-y-6">
-          <div>
+      <div className="space-y-6">
+        <div>
             <label htmlFor="amount" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
-              Amount (SOL)
-            </label>
+            Amount (SOL)
+          </label>
             <div className="relative">
-              <input
-                id="amount"
-                type="number"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
+          <input
+            id="amount"
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
                 className="w-full p-4 text-lg border-2 rounded-lg bg-gray-50 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"
-                placeholder="0.00"
-                disabled={isSubmitting}
-                min="0"
-                step="0.000001"
-              />
+            placeholder="0.00"
+            disabled={isSubmitting}
+            min="0"
+            step="0.000001"
+          />
               <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400 font-medium">
                 SOL
               </div>
             </div>
-          </div>
+        </div>
 
-          <div>
+        <div>
             <label htmlFor="wallet" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
-              Destination Wallet Address
-            </label>
-            <input
-              id="wallet"
-              type="text"
-              value={destinationWallet}
+            Destination Wallet Address
+          </label>
+          <input
+            id="wallet"
+            type="text"
+            value={destinationWallet}
               onChange={handleWalletChange}
               className="w-full p-4 text-sm font-mono border-2 rounded-lg bg-gray-50 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"
               placeholder="Enter Solana wallet address"
-              disabled={isSubmitting}
+            disabled={isSubmitting}
               spellCheck={false}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="off"
-            />
+          />
             <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
               Enter a valid Solana wallet address to receive the funds
             </p>
-          </div>
+        </div>
 
-          {error && (
+        {error && (
             <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 rounded-lg">
               <p className="font-medium">Error</p>
               <p className="text-sm mt-1">{error}</p>
-            </div>
-          )}
+          </div>
+        )}
 
-          {txSignature && (
+        {txSignature && (
             <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 rounded-lg">
               <p className="font-medium">Transaction Successful!</p>
               <p className="text-sm mt-1 break-all font-mono">{txSignature}</p>
               <p className="text-xs mt-2">Redirecting back to gift page...</p>
-            </div>
-          )}
+          </div>
+        )}
 
           <div className="flex flex-col space-y-3 pt-4">
             <Button 
@@ -214,17 +214,17 @@ export function WithdrawPage({ gift }: WithdrawPageProps) {
               disabled={isSubmitting} 
               className="w-full py-4 text-lg font-semibold bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400"
             >
-              {isSubmitting ? "Processing..." : "Withdraw Funds"}
-            </Button>
+            {isSubmitting ? "Processing..." : "Withdraw Funds"}
+          </Button>
 
-            <Button
-              variant="secondary"
-              onClick={() => router.push(`/gift/${gift.gift_id}`)}
-              disabled={isSubmitting}
+          <Button
+            variant="secondary"
+            onClick={() => router.push(`/gift/${gift.gift_id}`)}
+            disabled={isSubmitting}
               className="w-full py-4 text-lg"
-            >
-              Cancel
-            </Button>
+          >
+            Cancel
+          </Button>
           </div>
         </div>
       </div>
