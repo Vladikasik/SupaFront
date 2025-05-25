@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
-    "@privy-io/react-auth": "^2.13.1",
+    "@privy-io/react-auth": "^2.13.3",
     "@solana/pay": "^0.2.5",
     "@solana/web3.js": "^1.98.2",
     "@supabase/supabase-js": "^2.8.0",

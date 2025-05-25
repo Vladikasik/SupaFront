@@ -37,6 +37,9 @@ export function PrivyProvider({ children }: PropsWithChildren) {
         },
         embeddedWallets: {
           createOnLogin: 'users-without-wallets',
+          solana: {
+            createOnLogin: 'users-without-wallets',
+          },
         },
       }}
     >
