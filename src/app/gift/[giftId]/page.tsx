@@ -154,7 +154,7 @@ export default function GiftClaimPage({ params }: { params: { giftId: string } }
         </div>
         
         <p className="text-gray-700 mb-4">
-          The email address you're logged in with doesn't match the email address associated with this gift.
+          The email address you&apos;re logged in with doesn&apos;t match the email address associated with this gift.
         </p>
         
         <div className="flex flex-col space-y-3">

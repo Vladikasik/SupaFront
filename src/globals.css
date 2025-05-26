@@ -1,3 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Sequel+Sans:wght@400&display=swap');
+
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+
+@layer components {
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Additional webkit scrollbar hiding */
+  .scrollbar-hide::-webkit-scrollbar-track {
+    display: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar-corner {
+    display: none;
+  }
+}
+
+/* Global scrollbar hiding for the main container */
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+} 

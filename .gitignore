@@ -35,3 +35,7 @@ yarn-error.log*
 next-env.d.ts
 
 .cursor/
+.temp
+
+# Style system (temporary development file)
+src/shared/styles/system.ts
